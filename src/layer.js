@@ -122,7 +122,12 @@ var layer = {
       title: false,
       closeBtn: false,
       btn: false,
-      end: end
+      end: end,
+      success: function (_el, index) {
+       $(_el).click(function () {
+         layer.close(index)
+       })
+     }
     }, (type && !ready.config.skin) ? {
       skin: skin + ' layui-layer-hui',
       shift: shift
